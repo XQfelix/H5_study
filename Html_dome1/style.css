@@ -1,0 +1,158 @@
+body,p,ul,li,button,input{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: #eeeeee;
+}
+
+a{
+    text-decoration: none;
+}
+
+.w-1000{
+    width: 1000px;
+    margin:0 auto;
+}
+ul{
+
+list-style: none;
+}
+
+i{
+    font-style:normal;
+}
+.ucenter .ucenter-left{
+    float: left;
+    width: 226px;
+    min-height: 760px;
+    background-color: #ffffff;
+}
+
+.ucenter-left .ucenter-l-header{
+    margin:28px;
+    text-align: center;
+}
+
+.ucenter-left .ucenter-headericon{
+    margin: 0 auto;
+    width: 140px;
+    height: 140px;
+}
+
+.ucenter-left .ucenter-headericon img{
+    border-radius: 70px;
+}
+
+.ucenter-l-header .ucenter-name{
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-size: 18px;
+    line-height: 18px;
+}
+
+.ucenter-viptime{
+    padding-bottom: 10px;
+    font-size: 12px;
+}
+
+.orinage{
+   border: 1px solid #ff7600;
+    color: #ff7600;
+    padding: 5px 20px;
+    border-radius: 5px;
+}
+
+.orinage:hover{
+    background-color: #ff7600;
+    color: #000;
+}
+
+.ucenter-left .ucenter-l-column{
+    margin:30px;
+    display: inline-block;
+}
+
+.ucenter-left .ucenter-l-column-block li{
+    float: left;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    width: 100%;
+    line-height: 1.2em;
+    font-size: 16px;
+    text-align:center;
+
+}
+
+.ucenter-l-column-block li:hover{
+    background-color: #f1f1f1;
+    border-radius: 8px;
+}
+
+.ucenter-l-column-block li:active{
+    background-color: #f1f1f1;
+    border-radius: 8px;
+}
+
+
+.ucenter-l-column-block li a{
+    color: #101213;
+}
+
+.ucenter-right{
+    float: right;
+    width: 750px;
+    min-height: 770px;
+    background-color: #ffffff;
+}
+
+.ucenter-right .right-nav{
+    height: 44px;
+    border-bottom: 2px solid #f1f1f1;
+}
+
+.right-nav-g{
+    padding-left: 10px;
+    line-height: 44px;
+
+}
+
+.right-nav-g span{
+    padding-left: 10px;
+    font-size: 20px;
+    color: #101213;
+    border-left: 2px solid #59b200;
+}
+
+.right-content{
+    padding: 20px;
+    height:auto;
+    display: inline-block;
+}
+
+.input-box{
+
+    display: inline-block;
+}
+.gvip-input span{
+    padding: 8px 0 8px 8px;
+    height: auto;
+    display: inline-block;
+
+}
+
+.gvip-btn{
+    border: 1px solid #458B00;
+    color: #458B00;
+    padding: 5px 20px;
+    border-radius: 8px;
+    width: 60px;
+    margin-left: 8px;
+}
+
+.gvip-btn:hover{
+    background-color: #458B00;
+    color: #000;
+
+}
