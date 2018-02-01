@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>打企鹅游戏</title>
+    <script src="js/createjs.min.js"></script>
+    <script src="js/zepto.min.js"></script>
+    <script src="js/common.js"></script>
+    <link rel="stylesheet" href="js/common.css"/>
+    <style>
+        body,html{
+            padding:0;
+            margin: 0;
+            width:100%;
+            height: 100%;
+            background: #000;
+            color: transparent;
+        }
+
+        canvas{
+            width:100%;
+            height: 100%;
+        }
+
+        #container{
+            position:absolute;
+            bottom: 0;
+            left:0;
+            width:100%;
+            height: 100%;
+        }
+
+    </style>
+</head>
+<body>
+     <div id="container">
+         <canvas id="canvas"></canvas>
+     </div>
+      <div style="display: none;">
+      </div>
+
+     <script src="js/index.js"></script>
+     <script src="js/flyline.js"></script>
+     <script language="JavaScript">
+         var mebtnopenurl = "#";
+         window.shareData = {
+             "imgurl":"#",
+             "timeLineLink":"#",
+             "tTitle":"打企鹅",
+             "tContent":"打企鹅"
+         };
+
+         function goHome(){
+             window.location=mebtnopenurl;
+         }
+         function  clickMore(){
+             if((window.location+"").indexOf("zf",1)>0){
+                 window.location = "#";
+             }
+             else{
+                 goHome();
+             }
+         }
+         function dp_share(){
+             document.title = "你简直霸气侧漏，把企鹅击飞出"+ myData.scoreName + "谁还能超越我？";
+             document.getElementById("share").style.display="";
+             window.shareData.tTitle = document.title;
+         }
+
+         function dp_Ranking(){
+             window.location = mebtnopenurl;
+         }
+         function shouAd(){
+         }
+         function hideAd(){
+         }
+         document.addEventListener("WeixinJSBridgeReady",function onBridgeReady(){
+             WeixinJSBridge.on("menu:share:appmessage",function(argv){
+                 WeixinJSBridge.invoke("sendAppMessage",{
+                     "img_url" : window.shareData.imgUrl,
+                     "link":window.shareData.timeLineLink,
+                     "desc":window.shareData.tContent,
+                     "title":window.shareData.tTitle
+                 },onShareComplete);
+             });
+             WeixinJSBridge.on("menu:share:timeline",function(argv){
+                 WeixinJSBridge.invike("shareTimeline",{
+                     "img_url":window.shareData.imgutl,
+                     "img_width":"640",
+                     "img_height":"640",
+                     "link":window.shareData.timeLineLink,
+                     "desc":window.shareData.tContent,
+                     "title":window.shareData.tTitle
+                 },onShareComplete);
+             });
+         },false);
+     </script>
+
+     <div id=share style="display: none">
+         <img width="100%" src = "share.png"
+         style="position: fixed; z-index: 9999; top: 0; left: 0; display:none"
+         ontouchstart="document.getElementById('share').style.display='none';"/>
+     </div>
+     <div style="display: none">
+         <script type="text/javascript">
+             var myData ={gameid:"dqe"};
+             window.shareData.timeLineLink="#" + myData.gameid +(localStorage.myuid ? "&uid=" + localStorage.myuid : "");
+             function dp_submitScore(score){
+                 myData.score = score*10;
+                 maDate.scoreName = score+"米";
+                 if(score>0){
+                     if(confirm("你太猛了，大力出奇迹，一下子把人家击飞"+"score"+"米.要不要通知一下小伙伴")){
+                         dp_share();
+                     }
+                 }
+             }
+             function onShareComplete(res){
+                 if(localStorage.myuid && myData.score != undefined){
+                     setTimeout(function(){
+                         if(confirm("要将成绩提交到资源排行榜么？")){
+                             window.location = "#" + myData.gameid+"&uid="+localStorage.myuid+
+                                             myData.score + "&scorename=" + encodeURIComponent(maData.scoreName);
+
+                         }
+                         else {
+                             document.location.href = mebtnopenurl;
+                         }
+                         }, 500);
+                     }
+                 else{
+                     document.location.href = mebtnopenurl;
+                 }
+             }
+         </script>
+         <div style="display: none"></div>
+     </div>
+</body>
+</html>
